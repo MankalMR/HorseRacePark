@@ -5,3 +5,5 @@ The project contains two root folders,
 
 To execute the project simply navigate to /HorseRacePark/src/ path
 and execute the java file Application.java
+(OR)
+Also added HorseRacepark.jar file to be used as project execuable.
