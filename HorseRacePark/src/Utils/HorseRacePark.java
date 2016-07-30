@@ -12,11 +12,11 @@ import Model.Horse;
 
 public class HorseRacePark {
 	//regex for identifying valid setting horse winning format
-	private final String SET_WINNER_REGEX = "(?i)^[w]\\s[1-7]$";
+	private final String SET_WINNER_REGEX = "(?i)^[w]\\s\\d+$";
 	//regex for identifying valid bet on a horse
-	private final String SET_BID_REGEX = "^[1-7]\\s\\d+";
+	private final String SET_BID_REGEX = "^\\d+\\s\\d+";
 	//regex for identifying invalid bet amount on a horse
-	private final String INVALID_BID_REGEX = "^[1-7]\\s\\d+.\\d+$";
+	private final String INVALID_BID_REGEX = "^\\d+\\s\\d+.\\d+$";
 	//reset 
 	private final String RESET = "r";
 	//quit
@@ -95,6 +95,8 @@ public class HorseRacePark {
 			inputType = 4;
 		} else if (invalidBidMatcher.matches()) { //pattern match for invalid decimal input as bet
 			inputType = 5;
+		} else if ("".equals(input.trim())) { //check for empty string
+			inputType = 6;
 		} else {
 			inputType = 0;
 		}
@@ -162,6 +164,8 @@ public class HorseRacePark {
 						break;
 				case 5: //invalid bid placed
 						System.out.println("Invalid Bet: " + getInput().split(" ")[1]);
+						break;
+				case 6: //do nothing
 						break;
 			}
 		}
