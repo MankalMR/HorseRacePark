@@ -1,5 +1,7 @@
 package Utils;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,9 +52,31 @@ public class HorseRaceParkStarterTest {
 	}
 	
 	@Test
+	public void UserInputToSetWinningInvalidHorseNumber() {
+		hrpStarter.setInput("W 10");
+		if (3 == hrpStarter.getInputType()) {
+			HorseManager horseMgr = new HorseManager();
+			assertFalse(horseMgr.isValidHorseNumber(10));
+		} else {
+			fail();
+		}
+	}
+	
+	@Test
 	public void UserInputToSetBidOnHorse() {
 		hrpStarter.setInput("1 125");
 		assertEquals(4, hrpStarter.getInputType());
+	}
+	
+	@Test
+	public void UserInputToSetBidOnInvalidHorse() {
+		hrpStarter.setInput("10 125");
+		if (4 == hrpStarter.getInputType()) {
+			HorseManager horseMgr = new HorseManager();
+			assertFalse(horseMgr.isValidHorseNumber(10));
+		} else {
+			fail();
+		}
 	}
 	
 	@Test
@@ -65,6 +89,12 @@ public class HorseRaceParkStarterTest {
 	public void UserInputInvalidCommand() {
 		hrpStarter.setInput("f 10.25");
 		assertEquals(0, hrpStarter.getInputType());
+	}
+	
+	@Test
+	public void UserInputEmpty() {
+		hrpStarter.setInput("");
+		assertEquals(6, hrpStarter.getInputType());
 	}
 
 }
