@@ -21,38 +21,16 @@ Upon startup, the machine should display a list of its current inventory of mone
 Processing Requirements
 Ticket winnings will be calculated based on the size of the bet, and the odds of the selected horse to have won the race. Payout is to be calculated as bet amount * odds.
 The following table lists the available horses and their associated odds:
-# Horse Name
-1 That Darn Gray Cat
-2 Fort Utopia
-3 Count Sheep
-4 Ms Traitour
-5 Real Princess
-6 Pa Kettle
-7 Gin Stinger
+-> Horse Name
+1 That Darn Gray Cat-5
+2 Fort Utopia-10
+3 Count Sheep-9
+4 Ms Traitour-4
+5 Real Princess-3
+6 Pa Kettle-5
+7 Gin Stinger-6
 The machine must dispense a payout using the minimum number of bills possible, constrained by its current inventory (cash on hand). If the machine cannot dispense a payout due to insufficent funds, an error message is displayed (see sample output below).
 The following table lists the denominations (bills) the machine contains, and the maximum inventory for each denomination:
-￼
-￼
-Odds
-5
-10
-￼￼￼
-9
-￼￼￼
-￼￼￼
-4
-￼￼￼￼￼￼
-3
-￼￼￼
-￼￼￼
-5
-￼￼￼
-￼￼￼
-￼6
-￼
-￼
-￼
-￼
 Denomination Inventory
 ￼
 $1 10
