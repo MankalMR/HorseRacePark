@@ -111,7 +111,7 @@ public class HorseRacePark {
 		HorseManager horseMgr = new HorseManager();
 		MoneyManager moneyMgr = new MoneyManager();
 		int inputType;
-		while(true) {
+		while (true) { //always true loop
 			//print inventory
 			moneyMgr.printDenominationList();
 			//print horse list to bet on
